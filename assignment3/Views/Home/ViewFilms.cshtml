@@ -1,5 +1,4 @@
-﻿@page
-@{
+﻿@{
     ViewBag.Title = "Favorite Films";
 }
 
@@ -8,32 +7,35 @@
 <div class="text-center">
     <h1>Joel's Favorite Films!</h1>
 
-    <table>
-        <thead>
+    <table class="text-center table table-hover">
+        <thead class="thead-dark">
             <tr>
-                <th>Category</th>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Director</th>
-                <th>Rating</th>
-                <th>Edited</th>
-                <th>Lent To</th>
-                <th>Notes</th>
+                <th scope="col">Category</th>
+                <th scope="col">Title</th>
+                <th scope="col">Year</th>
+                <th scope="col">Director</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Edited</th>
+                <th scope="col">Lent To</th>
+                <th scope="col">Notes</th>
             </tr>
         </thead>
         <tbody>
             @foreach (assignment3.Models.Films x in Model)
             {
-                <tr>
-                    <td>@x.category</td>
-                    <td>@x.title</td>
-                    <td>@x.year</td>
-                    <td>@x.director</td>
-                    <td>@x.rating</td>
-                    <td>@x.edited</td>
-                    <td>@x.lent</td>
-                    <td>@x.notes</td>
-                </tr>
+                @if (x.title != "Independence Day")
+                {
+                    <tr>
+                        <td>@x.category</td>
+                        <td>@x.title</td>
+                        <td>@x.year</td>
+                        <td>@x.director</td>
+                        <td>@x.rating</td>
+                        <td>@x.edited</td>
+                        <td>@x.lent</td>
+                        <td>@x.notes</td>
+                    </tr>
+                }
             }
         </tbody>
     </table>

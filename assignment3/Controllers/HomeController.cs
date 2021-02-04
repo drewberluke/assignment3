@@ -33,12 +33,12 @@ namespace assignment3.Controllers
         public IActionResult AddFilm(Films model)
         {
             TempStorage.AddFilm(model);
-            return View("ViewFilms", TempStorage.films);
+            return Redirect("/Home/ViewFilms");
         }
 
         public IActionResult ViewFilms()
         {
-            return View();
+            return View(TempStorage.films);
         }
 
         public IActionResult Privacy()
