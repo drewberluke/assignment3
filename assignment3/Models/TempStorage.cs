@@ -6,7 +6,7 @@ namespace assignment3.Models
 {
     public class TempStorage
     {
-        public static List<Films> FilmsList = new List<Films>();
+        private static List<Films> FilmsList = new List<Films>();
 
         public static IEnumerable<Films> films => FilmsList;
 
